@@ -1,18 +1,18 @@
 import { createClient } from '@supabase/supabase-js';
 
 // ==========================================
-// KONFIGURASI DARI RAILWAY ENVIRONMENT
+// KONFIGURASI SUPABASE & ENVIRONMENT
 // ==========================================
-const SUPABASE_URL = process.env.SUPABASE_URL?.trim();
-const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
+// Menggunakan fallback URL langsung untuk menghindari variabel kosong di Railway
+const SUPABASE_URL = "https://fjssijgbemvyjcvpizko.supabase.co";
+const SUPABASE_SERVICE_ROLE_KEY = (process.env.SUPABASE_SERVICE_ROLE_KEY || "").trim();
 const WORKER_ID = process.env.WORKER_ID || 1;
 
 const TARGET_WORDS = 2000;
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
-// Validasi lingkungan utama
-if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
-    console.error("❌ Error: SUPABASE_URL atau SUPABASE_SERVICE_ROLE_KEY belum diatur di Environment Variables!");
+if (!SUPABASE_SERVICE_ROLE_KEY) {
+    console.error("❌ Error: SUPABASE_SERVICE_ROLE_KEY belum diatur di Environment Variables Railway!");
     process.exit(1);
 }
 
