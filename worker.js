@@ -190,9 +190,9 @@ async function startWorker() {
                 console.log(`  ❌ Gagal generate konten via AI untuk: "${keywordText}"`);
             }
 
-            // Jeda acak 2 - 5 detik
-            const delay = Math.floor(Math.random() * 3000) + 2000;
-            await sleep(delay);
+            // Jeda acak antara 70.000 ms (70 detik) - 102.800 ms (~103 detik)
+			const delay = Math.floor(Math.random() * 32800) + 70000;
+			await sleep(delay);
 
         } catch (err) {
             console.error("❌ Error di worker loop:", err);
