@@ -159,7 +159,7 @@ async function startWorker() {
 
             // Rotasi API Key
             const apiKey = getNextGroqApiKey();
-            console.log(`  🔑 Menggunakan API Key index ke-${apiKeyIndex} (...${apiKey.slice(-6)})`);
+            console.log(`  🔑 OKE Menggunakan API Key index ke-${apiKeyIndex} (...${apiKey.slice(-6)})`);
 
             // Generate Konten & Metadata
             const contentResult = await generateContent(keywordText, apiKey);
