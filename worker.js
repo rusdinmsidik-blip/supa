@@ -187,7 +187,7 @@ async function startWorker() {
                     console.log(`  📊 Jumlah kata artikel: ${wordCount} kata`);
                 }
             } else {
-                console.log(`  ❌ Gagal generate konten via AI untuk: "${keywordText}"`);
+                console.log(`  ❌ WADUH Gagal generate konten via AI untuk: "${keywordText}"`);
             }
 
             // Jeda acak antara 70.000 ms (70 detik) - 102.800 ms (~103 detik)
